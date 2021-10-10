@@ -15,13 +15,17 @@ while not done:
         pressed = pygame.key.get_pressed()
 
         if(pressed[pygame.K_LEFT]):
-            rectangle_x = rectangle_x - 5
+            if(rectangle_x - 5 > 0):
+                rectangle_x = rectangle_x - 5
         elif(pressed[pygame.K_RIGHT]):
-            rectangle_x = rectangle_x + 5
+            if(rectangle_x + 5 < 400):
+                rectangle_x = rectangle_x + 5
         elif(pressed[pygame.K_UP]):
-            rectangle_y = rectangle_y - 5
+            if(rectangle_y - 5 > 0):
+                rectangle_y = rectangle_y - 5
         elif(pressed[pygame.K_DOWN]):
-            rectangle_y = rectangle_y + 5
+            if(rectangle_y + 5 < 400):
+                rectangle_y = rectangle_y + 5
 
         if event.type == pygame.QUIT:
             done = True
