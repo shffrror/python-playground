@@ -18,19 +18,22 @@ while not done:
         pygame.draw.rect(screen, RED, rectangle)
         pressed = pygame.key.get_pressed()
         if(pressed[pygame.K_LEFT]):
-            if(rectangle_x - 5 > 0):
+            if(isWithinScreen(rectangle_x - 5, rectangle_y)):
                 rectangle_x = rectangle_x - 5
         elif(pressed[pygame.K_RIGHT]):
-            if(rectangle_x + 5 < 400):
+            if(isWithinScreen(rectangle_x + 5, rectangle_y)):
                 rectangle_x = rectangle_x + 5
         elif(pressed[pygame.K_UP]):
-            if(rectangle_y - 5 > 0):
+            if(isWithinScreen(rectangle_x, rectangle_y - 5)):
                 rectangle_y = rectangle_y - 5
         elif(pressed[pygame.K_DOWN]):
-            if(rectangle_y + 5 < 400):
+            if(isWithinScreen(rectangle_x, rectangle_y + 5)):
                 rectangle_y = rectangle_y + 5
 
         if event.type == pygame.QUIT:
             done = True
     pygame.display.flip()
 
+
+def isWithinScreen(x, y):
+    return (x > 0 and x <= 400 and y > 0 and y <= 400)
