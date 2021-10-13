@@ -1,3 +1,6 @@
+# TODO Create a class so method funcitons properly
+# TODO cleanup the heavy conditionals in 23-34
+
 import pygame
 
 
